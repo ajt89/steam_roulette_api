@@ -1,0 +1,1 @@
+Utilizing Django as an api for the steam roulette project 
