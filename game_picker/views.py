@@ -4,9 +4,10 @@ import requests
 
 from django.http import HttpResponse
 
-from game_picker_api import get_games, choose_game
+from game_picker_api import get_games, choose_game, retrieve_game_details
 
 
 def all(request):
-    game = choose_game()
-    return HttpResponse(game)
+    game_obj = choose_game()
+    game_details = retrieve_game_details(game_obj.appid)
+    return HttpResponse(game_details)
